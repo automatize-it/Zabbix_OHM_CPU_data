@@ -20,3 +20,5 @@ Average t can be achieved by creting calculated item with formula like:
 last("ohm.cpu[tc,intelcpu,0,1]",0) + 
 last("ohm.cpu[tc,intelcpu,0,2]",0) + 
 last("ohm.cpu[tc,intelcpu,0,3]",0))/8
+
+<img src="https://raw.githubusercontent.com/automatize-it/Zabbix_OHM_CPU_data/master/scrShts/scr1.png" />
