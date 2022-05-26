@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>5.0</version>
+    <date>2022-05-26T17:16:42Z</date>
+    <groups>
+        <group>
+            <name>Templates</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>OHM CPU data template</template>
+            <name>OpenHardwareMonitor CPU data collection</name>
+            <groups>
+                <group>
+                    <name>Templates</name>
+                </group>
+            </groups>
+            <discovery_rules>
+                <discovery_rule>
+                    <name>OHM CPUs discovery</name>
+                    <type>ZABBIX_ACTIVE</type>
+                    <key>ohm.cpu[cpud]</key>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>OHM {#CPU.MAN} {#CPU.MAN.ID} core {#CPU.MAN.ID.COREID} t °C</name>
+                            <type>ZABBIX_ACTIVE</type>
+                            <key>ohm.cpu[tc,{#CPU.MAN},{#CPU.MAN.ID},{#CPU.MAN.ID.COREID}]</key>
+                            <value_type>FLOAT</value_type>
+                            <units>°C</units>
+                            <trigger_prototypes>
+                                <trigger_prototype>
+                                    <expression>{avg(3)}&gt;60</expression>
+                                    <name>OHM {#CPU.MAN} {#CPU.MAN.ID} core {#CPU.MAN.ID.COREID} t &gt; 60</name>
+                                    <manual_close>YES</manual_close>
+                                </trigger_prototype>
+                            </trigger_prototypes>
+                        </item_prototype>
+                    </item_prototypes>
+                </discovery_rule>
+            </discovery_rules>
+        </template>
+    </templates>
+</zabbix_export>

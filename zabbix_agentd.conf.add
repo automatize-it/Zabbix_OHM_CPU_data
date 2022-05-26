@@ -1,0 +1,1 @@
+UserParameter=ohm.cpu[*],C:\Zabbix\Agent\scrpts\ohmGetCpuData.cmd $1 $2 $3 $4
