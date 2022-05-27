@@ -40,6 +40,7 @@ for /f "tokens=* skip=1 delims=" %%F in ('wmic /namespace:\\root\OpenHardwareMon
 	SET TC=%%F && GOTO :GETTNXT
 )
 :GETTNXT
+SET TC=!!TC:,=.!!
 ECHO %TC%
 ENDLOCAL 
 EXIT /B 0
